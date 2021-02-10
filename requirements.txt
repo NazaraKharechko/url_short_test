@@ -6,3 +6,5 @@ pytz==2021.1
 reverse==0.1.0
 shortener==0.2.1
 sqlparse==0.4.1
+
+requests~=2.25.1

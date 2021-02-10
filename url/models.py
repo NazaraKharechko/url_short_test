@@ -40,16 +40,15 @@ class Link(models.Model):
                        kwargs={"short_url": Link.shorten(self)})
 
 
-# class UrlData(models.Model):
-#     class Meta:
-#         db_table = 'url_data'
-#         verbose_name = 'url'
-#         verbose_name_plural = 'urls'
-#
-#     url = models.CharField(max_length=200)
-#     date_submitted = models.DateTimeField(auto_now_add=True)
-#     usage_count = models.PositiveIntegerField(default=None)
-#
-#
-# def __str__(self):
-#     return f"Short Url for: {self.url} is"
+class Statistics_Data(models.Model):
+    class Meta:
+        db_table = 'statistics'
+        verbose_name = 'stat'
+        verbose_name_plural = 'stats'
+
+    ip = models.CharField(max_length=50)
+    time = models.CharField(max_length=50)
+    referer = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.referer
