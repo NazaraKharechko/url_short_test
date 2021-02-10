@@ -1,0 +1,34 @@
+{% extends 'url/base.html' %}
+{% block content %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+	<form method="post">
+		{% csrf_token %}
+		{{ form.as_ul }}
+		<button type="submit" class="btn btn-info" data-toggle="collapse">Shorten</button>
+	</form>
+
+	{% for link in link_list %}
+		<ul>
+			<li>Short Link: <a href="{{ link.url }}">{{ site_url }}{{ link.short_url }}</a></li>
+			<li>Original Link: <a href="{{ link.url }}">{{ link.url }}</a></li>
+		</ul>
+	{% endfor %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+{% endblock %}
