@@ -6,6 +6,6 @@ from .views import LinkCreate, LinkShow, RedirectToLongURL
 urlpatterns = [
     # path('', views.mam),
     path('', LinkCreate.as_view(), name='home'),
-    path(r'link/<int:pk>)', LinkShow.as_view(), name='link_show'),
-    path(r'r/<short_url>)', RedirectToLongURL.as_view(), name='redirect_short_url'),
+    path(r'link/<int:pk>', LinkShow.as_view(), name='link_show'),
+    path(r'r/<short_url>', RedirectToLongURL.as_view(), name='redirect_short_url'),
 ]
